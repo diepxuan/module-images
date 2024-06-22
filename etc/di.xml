@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Theme\Model\Design\Backend\Logo">
+        <plugin name="allow-web-images" type="Diepxuan\Images\Plugin\Theme\Model\Design\Backend\Logo" />
+    </type>
+    <type name="Magento\Catalog\Controller\Adminhtml\Product\Gallery\Upload">
+        <plugin name="allow-web-images" type="Diepxuan\Images\Plugin\Catalog\Controller\Adminhtml\Product\Gallery\Upload" />
+    </type>
+</config>

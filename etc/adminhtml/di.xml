@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\Catalog\Controller\Adminhtml\Product\Gallery\Upload" type="Diepxuan\Images\Catalog\Controller\Adminhtml\Product\Gallery\Upload" />
+    <type name="Magento\MediaStorage\Model\File\Uploader">
+        <plugin name="allow-web-images" type="Diepxuan\Images\Plugin\MediaStorage\Model\File\Uploader" />
+    </type>
 </config>

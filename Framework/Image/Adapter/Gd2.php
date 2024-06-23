@@ -8,25 +8,19 @@ declare(strict_types=1);
  * @author     Tran Ngoc Duc <ductn@diepxuan.com>
  * @author     Tran Ngoc Duc <caothu91@gmail.com>
  *
- * @lastupdate 2024-06-23 12:46:30
+ * @lastupdate 2024-06-23 15:27:06
  */
 
 namespace Diepxuan\Images\Framework\Image\Adapter;
 
-use Diepxuan\Images\Model\Extension;
 use Magento\Framework\Exception\FileSystemException;
-use Magento\Framework\Filesystem;
-use Magento\Framework\Image\Adapter\Gd2 as AbstractAdapter;
 use Magento\Framework\Phrase;
-use Psr\Log\LoggerInterface;
 
 /**
  * Gd2 adapter.
  *
  * Class is a copy of \Magento\Framework\Image\Adapter\Gd2
  * var $_callbacks add IMAGETYPE_WEBP
- * function __construct add Plugin Model
- * function validateUploadFile check svg or call parent
  * function _getTransparency IMAGETYPE_WEBP isTrueColor
  *
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
@@ -58,26 +52,6 @@ class Gd2 extends AbstractAdapter
         IMAGETYPE_WBMP => ['output' => 'imagewbmp', 'create' => 'imagecreatefromxbm'],
         IMAGETYPE_WEBP => ['output' => 'imagewebp', 'create' => 'imagecreatefromwebp'],
     ];
-
-    /**
-     * @var Extension
-     */
-    private $extension;
-
-    /**
-     * Initialize default values.
-     *
-     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
-     */
-    public function __construct(
-        Filesystem $filesystem,
-        LoggerInterface $logger,
-        Extension $extension,
-        array $data = []
-    ) {
-        $this->extension = $extension;
-        parent::__construct($filesystem, $logger, $data);
-    }
 
     /**
      * Standard destructor. Destroy stored information about image.
@@ -116,18 +90,6 @@ class Gd2 extends AbstractAdapter
             $this->_getCallback('create', null, sprintf('Unsupported image format. File: %s', $this->_fileName)),
             $this->_fileName
         );
-    }
-
-    /**
-     * Check - is this file an image.
-     *
-     * @param string $filePath
-     *
-     * @return bool
-     */
-    public function validateUploadFile($filePath)
-    {
-        return $this->extension->isVectorImage($filePath) || parent::validateUploadFile($filePath);
     }
 
     /**

@@ -8,10 +8,10 @@ declare(strict_types=1);
  * @author     Tran Ngoc Duc <ductn@diepxuan.com>
  * @author     Tran Ngoc Duc <caothu91@gmail.com>
  *
- * @lastupdate 2024-06-22 15:58:46
+ * @lastupdate 2024-06-22 20:42:02
  */
 
-namespace Diepxuan\Images\Plugin\Theme\Design\Backend;
+namespace Diepxuan\Images\Plugin\Theme\Model\Design\Backend;
 
 class Logo
 {

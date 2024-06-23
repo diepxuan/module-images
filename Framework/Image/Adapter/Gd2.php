@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @author     Tran Ngoc Duc <ductn@diepxuan.com>
  * @author     Tran Ngoc Duc <caothu91@gmail.com>
  *
- * @lastupdate 2024-06-23 11:51:55
+ * @lastupdate 2024-06-23 12:46:30
  */
 
 namespace Diepxuan\Images\Framework\Image\Adapter;
@@ -72,8 +72,8 @@ class Gd2 extends AbstractAdapter
     public function __construct(
         Filesystem $filesystem,
         LoggerInterface $logger,
-        array $data,
-        Extension $extension
+        Extension $extension,
+        array $data = []
     ) {
         $this->extension = $extension;
         parent::__construct($filesystem, $logger, $data);

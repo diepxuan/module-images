@@ -11,7 +11,7 @@ declare(strict_types=1);
  * @author     Tran Ngoc Duc <ductn@diepxuan.com>
  * @author     Tran Ngoc Duc <caothu91@gmail.com>
  *
- * @lastupdate 2024-06-23 15:23:21
+ * @lastupdate 2024-06-23 16:15:52
  */
 
 namespace Diepxuan\Images\Framework\Image\Adapter;
@@ -188,5 +188,7 @@ abstract class AbstractAdapter extends \Magento\Framework\Image\Adapter\Abstract
                 $dims[$dimKey][$sizeKey] = (int) $size;
             }
         }
+
+        return $dims;
     }
 }

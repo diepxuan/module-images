@@ -8,17 +8,26 @@ declare(strict_types=1);
  * @author     Tran Ngoc Duc <ductn@diepxuan.com>
  * @author     Tran Ngoc Duc <caothu91@gmail.com>
  *
- * @lastupdate 2024-06-23 09:41:05
+ * @lastupdate 2024-06-23 11:51:55
  */
 
 namespace Diepxuan\Images\Framework\Image\Adapter;
 
+use Diepxuan\Images\Model\Extension;
 use Magento\Framework\Exception\FileSystemException;
+use Magento\Framework\Filesystem;
 use Magento\Framework\Image\Adapter\Gd2 as AbstractAdapter;
 use Magento\Framework\Phrase;
+use Psr\Log\LoggerInterface;
 
 /**
  * Gd2 adapter.
+ *
+ * Class is a copy of \Magento\Framework\Image\Adapter\Gd2
+ * var $_callbacks add IMAGETYPE_WEBP
+ * function __construct add Plugin Model
+ * function validateUploadFile check svg or call parent
+ * function _getTransparency IMAGETYPE_WEBP isTrueColor
  *
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  */
@@ -47,7 +56,28 @@ class Gd2 extends AbstractAdapter
         IMAGETYPE_PNG  => ['output' => 'imagepng', 'create' => 'imagecreatefrompng'],
         IMAGETYPE_XBM  => ['output' => 'imagexbm', 'create' => 'imagecreatefromxbm'],
         IMAGETYPE_WBMP => ['output' => 'imagewbmp', 'create' => 'imagecreatefromxbm'],
+        IMAGETYPE_WEBP => ['output' => 'imagewebp', 'create' => 'imagecreatefromwebp'],
     ];
+
+    /**
+     * @var Extension
+     */
+    private $extension;
+
+    /**
+     * Initialize default values.
+     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
+    public function __construct(
+        Filesystem $filesystem,
+        LoggerInterface $logger,
+        array $data,
+        Extension $extension
+    ) {
+        $this->extension = $extension;
+        parent::__construct($filesystem, $logger, $data);
+    }
 
     /**
      * Standard destructor. Destroy stored information about image.
@@ -86,6 +116,18 @@ class Gd2 extends AbstractAdapter
             $this->_getCallback('create', null, sprintf('Unsupported image format. File: %s', $this->_fileName)),
             $this->_fileName
         );
+    }
+
+    /**
+     * Check - is this file an image.
+     *
+     * @param string $filePath
+     *
+     * @return bool
+     */
+    public function validateUploadFile($filePath)
+    {
+        return $this->extension->isVectorImage($filePath) || parent::validateUploadFile($filePath);
     }
 
     /**
@@ -353,7 +395,7 @@ class Gd2 extends AbstractAdapter
      * @param string $text
      * @param string $font
      *
-     * @return AbstractAdapter
+     * @return \Magento\Framework\Image\Adapter\AbstractAdapter
      */
     public function createPngFromString($text, $font = '')
     {
@@ -691,7 +733,7 @@ class Gd2 extends AbstractAdapter
                 return $transparentIndex;
             }
         }
-        if (IMAGETYPE_JPEG === $fileType) {
+        if (IMAGETYPE_JPEG === $fileType || IMAGETYPE_WEBP === $fileType) {
             $isTrueColor = true;
         }
 

@@ -3,4 +3,18 @@
     <type name="Magento\Theme\Model\Design\Backend\Logo">
         <plugin name="allow-web-images" type="Diepxuan\Images\Plugin\Theme\Model\Design\Backend\Logo" />
     </type>
+    <type name="Magento\Cms\Model\Wysiwyg\Images\Storage">
+        <arguments>
+            <argument name="extensions" xsi:type="array">
+                <item name="allowed" xsi:type="array">
+                    <item name="svg" xsi:type="string">image/svg+xml</item>
+                    <item name="webp" xsi:type="string">image/webp</item>
+                </item>
+                <item name="image_allowed" xsi:type="array">
+                    <item name="svg" xsi:type="string">image/svg+xml</item>
+                    <item name="webp" xsi:type="string">image/webp</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
 </config>

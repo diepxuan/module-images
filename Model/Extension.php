@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @author     Tran Ngoc Duc <ductn@diepxuan.com>
  * @author     Tran Ngoc Duc <caothu91@gmail.com>
  *
- * @lastupdate 2024-06-26 15:28:35
+ * @lastupdate 2024-06-26 22:00:57
  */
 
 namespace Diepxuan\Images\Model;
@@ -57,6 +57,15 @@ class Extension
     public function getVectorExtensions()
     {
         return array_keys($this->vectorMimeTypes);
+    }
+
+    public function getAllowedMimeType($mimeType)
+    {
+        if (isset(array_flip($this->vectorMimeTypes)[$mimeType])) {
+            return array_flip($this->vectorMimeTypes)[$mimeType];
+        }
+
+        return '';
     }
 
     /**

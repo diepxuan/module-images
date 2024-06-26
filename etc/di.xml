@@ -3,6 +3,11 @@
     <type name="Magento\Theme\Model\Design\Backend\Logo">
         <plugin name="allow-web-images" type="Diepxuan\Images\Plugin\Theme\Model\Design\Backend\Logo" />
     </type>
+    <!-- <preference for="Magento\Catalog\Model\Product\Gallery\MimeTypeExtensionMap" type="Diepxuan\Images\Plugin\Catalog\Model\Product\Gallery\MimeTypeExtensionMap" /> -->
+    <type name="Magento\Catalog\Model\Product\Gallery\MimeTypeExtensionMap">
+        <plugin name="Diepxuan_Images::productGalleryMimeTypeExtensionMap" type="Diepxuan\Images\Plugin\Catalog\Model\Product\Gallery\MimeTypeExtensionMap" />
+    </type>
+    <!-- app/code/Magento/Catalog/Model/Product/Gallery/MimeTypeExtensionMap.php -->
     <!-- Magento/Cms/etc/di.xml -->
     <type name="Magento\Cms\Model\Wysiwyg\Images\Storage">
         <arguments>

@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @author     Tran Ngoc Duc <ductn@diepxuan.com>
  * @author     Tran Ngoc Duc <caothu91@gmail.com>
  *
- * @lastupdate 2024-06-26 15:38:13
+ * @lastupdate 2024-06-26 16:39:39
  */
 
 namespace Diepxuan\Images\Plugin\Framework\File;
@@ -39,12 +39,10 @@ class Uploader extends Action
      */
     public function beforeSetAllowedExtensions(OriginUploader $uploader, $extensions = [])
     {
-        $extensions = array_merge(
-            $extensions,
+        return array_merge(
+            (array) $extensions,
             $this->extension->getAllowedExtensions()
         );
-
-        return [$extensions];
     }
 
     public function execute(): void {}

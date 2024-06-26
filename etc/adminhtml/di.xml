@@ -6,4 +6,10 @@
     <type name="Magento\MediaStorage\Model\File\Uploader">
         <plugin name="allow-web-images" type="Diepxuan\Images\Plugin\MediaStorage\Model\File\Uploader" />
     </type>
+    <type name="Magento\Cms\Controller\Adminhtml\Wysiwyg\Images\Thumbnail">
+        <plugin name="Diepxuan_Images::allowWebImagesFromCmsWysiwygImagesThumbnail" type="Diepxuan\Images\Plugin\Controller\Adminhtml\Wysiwyg\Images\Thumbnail" />
+    </type>
+    <type name="Magento\Cms\Controller\Adminhtml\Wysiwyg\Directive">
+        <plugin name="Diepxuan_Images::allowWebImagesFromCmsWysiwygDirective" type="Diepxuan\Images\Plugin\Controller\Adminhtml\Wysiwyg\Directive" />
+    </type>
 </config>

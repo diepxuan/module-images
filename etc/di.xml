@@ -3,6 +3,7 @@
     <type name="Magento\Theme\Model\Design\Backend\Logo">
         <plugin name="allow-web-images" type="Diepxuan\Images\Plugin\Theme\Model\Design\Backend\Logo" />
     </type>
+    <!-- Magento/Cms/etc/di.xml -->
     <type name="Magento\Cms\Model\Wysiwyg\Images\Storage">
         <arguments>
             <argument name="extensions" xsi:type="array">
@@ -14,6 +15,15 @@
                     <item name="svg" xsi:type="string">image/svg+xml</item>
                     <item name="webp" xsi:type="string">image/webp</item>
                 </item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- Magento/MediaGalleryIntegration/etc/di.xml -->
+    <type name="Magento\MediaGalleryIntegration\Plugin\SaveImageInformation">
+        <arguments>
+            <argument name="imageExtensions" xsi:type="array">
+                <item name="svg" xsi:type="string">svg</item>
+                <item name="webp" xsi:type="string">webp</item>
             </argument>
         </arguments>
     </type>

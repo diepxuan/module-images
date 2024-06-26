@@ -12,4 +12,5 @@
     <type name="Magento\Cms\Controller\Adminhtml\Wysiwyg\Directive">
         <plugin name="Diepxuan_Images::allowWebImagesFromCmsWysiwygDirective" type="Diepxuan\Images\Plugin\Controller\Adminhtml\Wysiwyg\Directive" />
     </type>
+    <preference for="Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content" type="Diepxuan\Images\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content" />
 </config>

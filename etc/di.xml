@@ -4,6 +4,20 @@
     <type name="Magento\Catalog\Model\Product\Gallery\MimeTypeExtensionMap">
         <plugin name="Diepxuan_Images::productGalleryMimeTypeExtensionMap" type="Diepxuan\Images\Plugin\Catalog\Model\Product\Gallery\MimeTypeExtensionMap" />
     </type>
+    <preference for="Magento\MediaGalleryRenditionsApi\Api\GetRenditionPathInterface" type="Magento\MediaGalleryRenditions\Model\GetRenditionPath"/>
+    <preference for="Magento\MediaGalleryApi\Api\IsPathExcludedInterface" type="Magento\MediaGallery\Model\Directory\IsExcluded"/>
+    <type name="Magento\MediaGalleryRenditions\Model\GenerateRenditions">
+        <plugin name="Diepxuan_Images::mediaGalleryRenditions" type="Diepxuan\Images\Plugin\MediaGalleryRenditions\Model\GenerateRenditions" />
+    </type>
+    <type name="Magento\MediaGalleryRenditions\Model\Queue\FetchRenditionPathsBatches">
+        <arguments>
+            <argument name="batchSize" xsi:type="number">100</argument>
+            <argument name="fileExtensions" xsi:type="array">
+                <item name="svg" xsi:type="string">svg</item>
+                <item name="webp" xsi:type="string">webp</item>
+            </argument>
+        </arguments>
+    </type>
     <!-- Magento/Cms/etc/di.xml -->
     <type name="Magento\Cms\Model\Wysiwyg\Images\Storage">
         <arguments>

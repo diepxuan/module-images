@@ -3,6 +3,12 @@
     <type name="Magento\Framework\File\Uploader">
         <plugin name="Diepxuan_Images::allowWebImagesFromFileUploader" type="Diepxuan\Images\Plugin\Framework\File\Uploader"/>
     </type>
+    <type name="Magento\Theme\Model\Design\Backend\Image">
+        <plugin name="Diepxuan_Images::allowWebImages" type="Diepxuan\Images\Plugin\Theme\Model\Design\Backend\Logo" />
+    </type>
+    <type name="Magento\Theme\Model\Design\Backend\Image">
+        <plugin name="Diepxuan_Images::allowWebImages" type="Diepxuan\Images\Plugin\Theme\Model\Design\Backend\Image" />
+    </type>
     <type name="Magento\Theme\Model\Design\Backend\Favicon">
         <plugin name="Diepxuan_Images::allowWebImages" type="Diepxuan\Images\Plugin\Theme\Model\Design\Backend\Favicon" />
     </type>

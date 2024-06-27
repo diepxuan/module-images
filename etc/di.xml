@@ -12,6 +12,9 @@
     <type name="Magento\MediaGalleryRenditions\Model\GenerateRenditions">
         <plugin name="Diepxuan_Images::mediaGalleryRenditions" type="Diepxuan\Images\Plugin\MediaGalleryRenditions\Model\GenerateRenditions" />
     </type>
+    <type name="Magento\Theme\Helper\Storage">
+        <plugin name="Diepxuan_Images::themeHelperStorage" type="Diepxuan\Images\Plugin\Theme\Helper\Storage" />
+    </type>
     <type name="Magento\MediaGalleryRenditions\Model\Queue\FetchRenditionPathsBatches">
         <arguments>
             <argument name="batchSize" xsi:type="number">100</argument>

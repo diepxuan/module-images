@@ -23,5 +23,6 @@
     </type>
     <preference for="Magento\Backend\Block\Media\Uploader" type="Diepxuan\Images\Backend\Block\Media\Uploader" />
     <preference for="Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content" type="Diepxuan\Images\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content" />
+    <preference for="Magento\Catalog\Model\ResourceModel\Product\Attribute\Backend\Image" type="Diepxuan\Images\Catalog\Model\ResourceModel\Product\Attribute\Backend\Image" />
     <preference for="Magento\Config\Model\Config\Backend\Image" type="Diepxuan\Images\Config\Model\Config\Backend\Image" />
 </config>

@@ -96,6 +96,7 @@ class GenerateRenditions
      */
     public function aroundExecute(Origin $subject, callable $proceed, array $paths)
     {
+        return $proceed($paths);
         $failedPaths = [];
 
         try {

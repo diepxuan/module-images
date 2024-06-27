@@ -20,14 +20,14 @@
         <plugin name="Diepxuan_Images::themeHelperStorage" type="Diepxuan\Images\Plugin\Theme\Helper\Storage" />
     </type>
     <!-- Magento/MediaGalleryRenditions/etc/di.xml -->
-    <type name="Magento\MediaGalleryRenditions\Model\Queue\FetchRenditionPathsBatches">
+    <!-- <type name="Magento\MediaGalleryRenditions\Model\Queue\FetchRenditionPathsBatches">
         <arguments>
             <argument name="fileExtensions" xsi:type="array">
                 <item name="svg" xsi:type="string">svg</item>
                 <item name="webp" xsi:type="string">webp</item>
             </argument>
         </arguments>
-    </type>
+    </type> -->
     <!-- Magento/Cms/etc/di.xml -->
     <type name="Magento\Cms\Model\Wysiwyg\Images\Storage">
         <arguments>

@@ -19,9 +19,9 @@
     <type name="Magento\Theme\Helper\Storage">
         <plugin name="Diepxuan_Images::themeHelperStorage" type="Diepxuan\Images\Plugin\Theme\Helper\Storage" />
     </type>
+    <!-- Magento/MediaGalleryRenditions/etc/di.xml -->
     <type name="Magento\MediaGalleryRenditions\Model\Queue\FetchRenditionPathsBatches">
         <arguments>
-            <argument name="batchSize" xsi:type="number">100</argument>
             <argument name="fileExtensions" xsi:type="array">
                 <item name="svg" xsi:type="string">svg</item>
                 <item name="webp" xsi:type="string">webp</item>

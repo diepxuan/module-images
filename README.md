@@ -8,13 +8,7 @@ Magento 2 module
 Web images in Magento 2
 -----------------------
 
-* Page Builder editor
-* Wysiwyg editor
-* Theme logo and favicon
-* Product media gallery
-* Attribute option swatch images
-* Category image
-* Custom image uploader fields
+* Support svg and webp
 
 Installation
 ------------

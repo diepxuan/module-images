@@ -3,6 +3,9 @@
     <type name="Magento\Framework\File\Uploader">
         <plugin name="Diepxuan_Images::allowWebImagesFromFileUploader" type="Diepxuan\Images\Plugin\Framework\File\Uploader"/>
     </type>
+    <type name="Magento\Theme\Model\Design\Backend\Favicon">
+        <plugin name="Diepxuan_Images::allowWebImages" type="Diepxuan\Images\Plugin\Theme\Model\Design\Backend\Favicon" />
+    </type>
     <type name="Magento\MediaStorage\Model\File\Uploader">
         <plugin name="allow-web-images" type="Diepxuan\Images\Plugin\MediaStorage\Model\File\Uploader" />
     </type>

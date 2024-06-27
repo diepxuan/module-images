@@ -8,13 +8,15 @@ declare(strict_types=1);
  * @author     Tran Ngoc Duc <ductn@diepxuan.com>
  * @author     Tran Ngoc Duc <caothu91@gmail.com>
  *
- * @lastupdate 2024-06-26 22:00:57
+ * @lastupdate 2024-06-27 15:17:11
  */
 
 namespace Diepxuan\Images\Model;
 
 class Extension
 {
+    const ACCEPT_FILE_TYPES = '/(\.|\/)(gif|jpe?g|png|svg|webp)$/i';
+
     /**
      * @var array
      */
@@ -32,11 +34,21 @@ class Extension
     /**
      * @var array
      */
+    protected $defaultMimeTypes = [
+        'jpg'  => 'image/jpeg',
+        'jpeg' => 'image/jpeg',
+        'gif'  => 'image/gif',
+        'png'  => 'image/png',
+    ];
+
+    /**
+     * @var array
+     */
     protected $allowedMimeTypes = [];
 
     public function __construct(
     ) {
-        $this->allowedMimeTypes = array_merge($this->webMimeTypes, $this->vectorMimeTypes);
+        $this->allowedMimeTypes = array_merge($this->webMimeTypes, $this->vectorMimeTypes, $this->defaultMimeTypes);
     }
 
     /**
@@ -47,6 +59,16 @@ class Extension
     public function getAllowedExtensions()
     {
         return array_keys($this->allowedMimeTypes);
+    }
+
+    public function getAllowedExtensionsString()
+    {
+        return implode(' ', $this->getAllowedExtensions());
+    }
+
+    public function getAllowedExtensionsRegex()
+    {
+        return static::ACCEPT_FILE_TYPES;
     }
 
     public function getWebExtensions()

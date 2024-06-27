@@ -15,6 +15,9 @@
     <type name="Magento\MediaStorage\Model\File\Uploader">
         <plugin name="Diepxuan_Images::allowWebImagesFromFileUploader" type="Diepxuan\Images\Plugin\MediaStorage\Model\File\Uploader" />
     </type>
+    <type name="Magento\MediaGalleryUi\Ui\Component\ImageUploader">
+        <plugin name="Diepxuan_Images::mediaGalleryUiImageUploader" type="Diepxuan\Images\Plugin\MediaGalleryUi\Ui\Component\ImageUploader" />
+    </type>
     <type name="Magento\Cms\Controller\Adminhtml\Wysiwyg\Images\Thumbnail">
         <plugin name="Diepxuan_Images::allowWebImagesFromCmsWysiwygImagesThumbnail" type="Diepxuan\Images\Plugin\Controller\Adminhtml\Wysiwyg\Images\Thumbnail" />
     </type>

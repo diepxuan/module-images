@@ -24,8 +24,10 @@
     <type name="Magento\Cms\Controller\Adminhtml\Wysiwyg\Directive">
         <plugin name="Diepxuan_Images::allowWebImagesFromCmsWysiwygDirective" type="Diepxuan\Images\Plugin\Controller\Adminhtml\Wysiwyg\Directive" />
     </type>
+    <type name="Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content">
+        <plugin name="Diepxuan_Images::allowWebImagesFromCatalogGalleryContent" type="Diepxuan\Images\Plugin\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content" />
+    </type>
     <preference for="Magento\Backend\Block\Media\Uploader" type="Diepxuan\Images\Backend\Block\Media\Uploader" />
-    <preference for="Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content" type="Diepxuan\Images\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content" />
     <preference for="Magento\Catalog\Model\ResourceModel\Product\Attribute\Backend\Image" type="Diepxuan\Images\Catalog\Model\ResourceModel\Product\Attribute\Backend\Image" />
     <preference for="Magento\Config\Model\Config\Backend\Image" type="Diepxuan\Images\Config\Model\Config\Backend\Image" />
     <preference for="Magento\Config\Model\Config\Backend\Image\Favicon" type="Diepxuan\Images\Config\Model\Config\Backend\Image\Favicon" />

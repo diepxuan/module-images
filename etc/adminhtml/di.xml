@@ -3,7 +3,7 @@
     <type name="Magento\Framework\File\Uploader">
         <plugin name="Diepxuan_Images::allowWebImagesFromFileUploader" type="Diepxuan\Images\Plugin\Framework\File\Uploader"/>
     </type>
-    <type name="Magento\Theme\Model\Design\Backend\Image">
+    <type name="Magento\Theme\Model\Design\Backend\Logo">
         <plugin name="Diepxuan_Images::allowWebImages" type="Diepxuan\Images\Plugin\Theme\Model\Design\Backend\Logo" />
     </type>
     <type name="Magento\Theme\Model\Design\Backend\Image">
@@ -13,7 +13,7 @@
         <plugin name="Diepxuan_Images::allowWebImages" type="Diepxuan\Images\Plugin\Theme\Model\Design\Backend\Favicon" />
     </type>
     <type name="Magento\MediaStorage\Model\File\Uploader">
-        <plugin name="allow-web-images" type="Diepxuan\Images\Plugin\MediaStorage\Model\File\Uploader" />
+        <plugin name="Diepxuan_Images::allowWebImagesFromFileUploader" type="Diepxuan\Images\Plugin\MediaStorage\Model\File\Uploader" />
     </type>
     <type name="Magento\Cms\Controller\Adminhtml\Wysiwyg\Images\Thumbnail">
         <plugin name="Diepxuan_Images::allowWebImagesFromCmsWysiwygImagesThumbnail" type="Diepxuan\Images\Plugin\Controller\Adminhtml\Wysiwyg\Images\Thumbnail" />

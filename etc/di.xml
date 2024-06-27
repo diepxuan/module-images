@@ -3,6 +3,9 @@
     <preference for="Magento\MediaGalleryRenditionsApi\Api\GetRenditionPathInterface" type="Magento\MediaGalleryRenditions\Model\GetRenditionPath"/>
     <preference for="Magento\MediaGalleryApi\Api\IsPathExcludedInterface" type="Magento\MediaGallery\Model\Directory\IsExcluded"/>
     <!-- <preference for="Magento\Catalog\Model\Product\Gallery\MimeTypeExtensionMap" type="Diepxuan\Images\Plugin\Catalog\Model\Product\Gallery\MimeTypeExtensionMap" /> -->
+    <type name="Magento\Framework\Filesystem\Io\File">
+        <plugin name="Diepxuan_Images::systemIoFile" type="Diepxuan\Images\Plugin\Framework\Filesystem\Io\File" />
+    </type>
     <type name="Magento\Catalog\Model\Product\Gallery\MimeTypeExtensionMap">
         <plugin name="Diepxuan_Images::productGalleryMimeTypeExtensionMap" type="Diepxuan\Images\Plugin\Catalog\Model\Product\Gallery\MimeTypeExtensionMap" />
     </type>

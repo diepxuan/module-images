@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @author     Tran Ngoc Duc <ductn@diepxuan.com>
  * @author     Tran Ngoc Duc <caothu91@gmail.com>
  *
- * @lastupdate 2024-06-27 07:22:08
+ * @lastupdate 2024-12-04 17:34:09
  */
 
 namespace Diepxuan\Images\Config\Model\Config\Backend;
@@ -29,32 +29,9 @@ class Image extends OriginImage
 {
     private $extension;
 
-    public function __construct(
-        Context $context,
-        Registry $registry,
-        ScopeConfigInterface $config,
-        TypeListInterface $cacheTypeList,
-        UploaderFactory $uploaderFactory,
-        RequestDataInterface $requestData,
-        Filesystem $filesystem,
-        ?AbstractResource $resource,
-        ?AbstractDb $resourceCollection,
-        array $data,
-        Extension $extension
-    ) {
-        parent::__construct(
-            $context,
-            $registry,
-            $config,
-            $cacheTypeList,
-            $uploaderFactory,
-            $requestData,
-            $filesystem,
-            $resource,
-            $resourceCollection,
-            $data
-        );
-        $this->extension = $extension;
+    protected function getExtension() : Extension {
+        $this->extension = $this->extension?:new Extension;
+        return $this->extension;
     }
 
     /**
@@ -66,7 +43,7 @@ class Image extends OriginImage
     {
         return array_merge(
             parent::_getAllowedExtensions(),
-            $this->extension->getAllowedExtensions(),
+            $this->getExtension()->getAllowedExtensions(),
         );
     }
 }

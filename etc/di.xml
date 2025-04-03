@@ -83,4 +83,7 @@
             </argument>
         </arguments>
     </type>
+    <type name="Magento\Framework\Image\Adapter\Gd2">
+        <plugin name="Diepxuan_Images::allowSvg" type="Diepxuan\Images\Framework\Image\Adapter\Gd2" />
+    </type>
 </config>
